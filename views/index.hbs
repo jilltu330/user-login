@@ -1,15 +1,17 @@
 <div class="row d-flex justify-content-center mt-5">
   <div class="col-5">
     <h1 class="text-center">Account Login</h1>
-    <form class="text-center">
+    <form action="/login" method="POST" class="text-center">
       <div class="form-group mt-5">
-        <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"
-          aria-describedby="emailHelp">
+        <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="Email"
+          aria-describedby="emailHelp" required>
       </div>
       <div class="form-group mt-4">
-        <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password"
+          required>
       </div>
       <button type="submit" class="btn btn-outline-dark btn-lg mt-5" style="width:150px;">Sign in</button>
     </form>
+    <p class="text-center mt-5" style="color: red;">{{ errorNotice }}</p>
   </div>
 </div>
