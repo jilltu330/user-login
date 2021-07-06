@@ -9,15 +9,11 @@ const mongoose = require('mongoose')
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
-mongoose.connect('mongodb://localhost/todo-list', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/user-auth', { useNewUrlParser: true, useUnifiedTopology: true })
 
-const db = mongoose.connection // 取得資料庫連線狀態
-db.on('error', () => { // 連線異常
-  console.log('mongodb error!')
-})
-db.once('open', () => { // 連線成功
-  console.log('mongodb connected!')
-})
+const db = mongoose.connection
+db.on('error', () => { console.log('mongodb error!') })
+db.once('open', () => { console.log('mongodb connected!') })
 
 // 設定首頁路由
 app.get('/', (req, res) => {
