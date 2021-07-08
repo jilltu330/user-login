@@ -5,6 +5,7 @@
 * 發送表單，會將帳密傳送給伺服器比對內建的使用者名單
 * 若資料錯誤，就彈回登入頁並且在介面上顯示「Username 或Password 錯誤」
 * 若資料正確，使用者就進入自己的 welcome page，在此頁面上會顯示登入使用者的 firstName。
+* 利用Cookie-based Authentication維持登入狀態
 
 ### 頁面設計
 ![image](./public/images/A10-index.png)
@@ -38,3 +39,4 @@ http://localhost:3000/
 * Express (v4.17.1)
 * Express-Handlebars (v5.3.2)
 * Mongoose (^5.12.14)
+* express-session (^1.17.2)
